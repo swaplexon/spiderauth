@@ -35,7 +35,7 @@ builder.Services.Configure<MongoSettings>(builder.Configuration.GetSection("Mong
 builder.Services.AddSingleton<IMongoSettings>(serviceProvider =>
 serviceProvider.GetRequiredService<IOptions<MongoSettings>>().Value
 );
-//builder.Services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
+builder.Services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
 
 // configure DI for application services
 builder.Services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
