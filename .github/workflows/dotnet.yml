@@ -35,12 +35,12 @@ jobs:
         # FTP host
         host: 52.30.150.198
         # FTP user
-        user: administrator
+        user: optimusprime
         # FTP password
-        password: ${{ secrets.PASSWORD }}
+        password: test@123
         # Force SSL encryption
         forceSsl: false
         # Local directory
         localDir: "/home/runner/work/spiderauth/spiderauth/spider3auth/bin/Release/net6.0/publish/"
         # Remote directory
-        remoteDir: spiderauth
+        remoteDir: spiderauthftp
