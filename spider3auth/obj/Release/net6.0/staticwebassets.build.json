@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1oIfOcI7UUmL2XBfE58wABqzKmmr5t0rLPMGFkFWz1o=",
+  "Source": "spider3auth",
+  "BasePath": "_content/spider3auth",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

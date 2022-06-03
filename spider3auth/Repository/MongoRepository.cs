@@ -13,10 +13,11 @@ namespace spider3auth.Repository
      where TDocument : IDocument
     {
         private readonly IMongoCollection<TDocument> _collection;
-
+        private readonly IMongoSettings _settings;
         public MongoRepository(IMongoSettings settings)
         {
-            var database = new MongoClient(settings.ConnectionString).GetDatabase(settings.DatabaseName);
+            _settings = settings;
+            var database = new MongoClient(settings.ConnectionString).GetDatabase(_settings.DatabaseName);
             _collection = database.GetCollection<TDocument>(GetCollectionName(typeof(TDocument)));
         }
 
