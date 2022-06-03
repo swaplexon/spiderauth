@@ -16,6 +16,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
 //builder.WebHost.UseIISIntegration();
 
+builder.Services.Configure<IISServerOptions>(options =>
+{
+    options.AutomaticAuthentication = false;
+});
+
 // Configure JSON options
 builder.Services.Configure<JsonOptions>(options =>
 {
