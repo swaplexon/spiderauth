@@ -37,7 +37,7 @@ jobs:
         # FTP user
         user: optimusprime
         # FTP password
-        password: test@123
+        password: test"123
         # Force SSL encryption
         forceSsl: false
         # Local directory
