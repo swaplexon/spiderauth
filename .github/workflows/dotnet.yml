@@ -41,6 +41,6 @@ jobs:
         # Force SSL encryption
         forceSsl: false
         # Local directory
-        localDir: "/home/runner/work/CiTest/CiTest/CiTest/publish"
+        localDir: "/home/runner/work/spiderauth/spiderauth/spider3auth/bin/Release/net6.0/publish/"
         # Remote directory
         remoteDir: spiderauth
