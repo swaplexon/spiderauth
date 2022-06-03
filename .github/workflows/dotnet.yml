@@ -32,3 +32,4 @@ jobs:
         iisreset /stop
         Copy-Item D:\actions-runner\_work\spiderauth\spiderauth\spider3auth\bin\Release\net6.0\publish\ D:\spiderauth -Recurse -Force
         iisreset /start
+      ##############
