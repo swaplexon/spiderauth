@@ -22,4 +22,25 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal      
+    - name: Test
+      run: dotnet test --no-build --verbosity normal # <-- this is the current bottom line
+    - name: Publish
+      run: dotnet publish spider3auth/spider3auth.csproj -c Release
+    - name: ftp-action
+      # You may pin to the exact commit or the version.
+      # uses: sebastianpopp/ftp-action@eb75c5cb29d23ee4a729720a27dfb66403cb0f6d
+      uses: sebastianpopp/ftp-action@v2.0.0
+      with:
+        # FTP host
+        host: 52.30.150.198
+        # FTP user
+        user: administrator
+        # FTP password
+        password: ${{ secrets.PASSWORD }}
+        # Force SSL encryption
+        forceSsl: false
+        # Local directory
+        localDir: "/home/runner/work/CiTest/CiTest/CiTest/publish"
+        # Remote directory
+        remoteDir: spiderauth
