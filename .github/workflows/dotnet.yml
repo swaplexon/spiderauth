@@ -27,5 +27,8 @@ jobs:
       run: dotnet test --no-build --verbosity normal # <-- this is the current bottom line
     - name: Publish
       run: dotnet publish spider3auth/spider3auth.csproj -c Release
-    - name: Run
-      run: dotnet run
+    - name: Deploy to IIS
+      run: |
+        iisreset /stop
+        Copy-Item D:\actions-runner\_work\spiderauth\spiderauth\spider3auth\bin\Release\net6.0\publish\ D:\spiderauth -Recurse -Force
+        iisreset /start
