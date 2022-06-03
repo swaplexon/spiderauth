@@ -37,10 +37,10 @@ jobs:
         # FTP user
         user: optimusprime
         # FTP password
-        password: test"123
+        password: ${{ secrets.PASSWORD }}
         # Force SSL encryption
         forceSsl: false
         # Local directory
         localDir: "/home/runner/work/spiderauth/spiderauth/spider3auth/bin/Release/net6.0/publish/"
         # Remote directory
-        remoteDir: spiderauth
+        remoteDir: "/spiderauth"
