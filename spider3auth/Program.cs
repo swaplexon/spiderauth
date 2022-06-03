@@ -14,7 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
-
+//builder.WebHost.UseIISIntegration();
 
 // Configure JSON options
 builder.Services.Configure<JsonOptions>(options =>
