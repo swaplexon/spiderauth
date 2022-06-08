@@ -32,9 +32,9 @@ builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSet
 
 // MongoDb Configuration
 builder.Services.Configure<MongoSettings>(builder.Configuration.GetSection("MongoDbSettings"));
-//builder.Services.AddSingleton<IMongoSettings>(serviceProvider =>
-//serviceProvider.GetRequiredService<IOptions<MongoSettings>>().Value
-//);
+builder.Services.AddSingleton<IMongoSettings>(serviceProvider =>
+serviceProvider.GetRequiredService<IOptions<MongoSettings>>().Value
+);
 //builder.Services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
 
 // configure DI for application services
