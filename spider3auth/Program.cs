@@ -32,9 +32,9 @@ builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSet
 
 // MongoDb Configuration
 builder.Services.Configure<MongoSettings>(builder.Configuration.GetSection("MongoDbSettings"));
-builder.Services.AddSingleton<IMongoSettings>(serviceProvider =>
-serviceProvider.GetRequiredService<IOptions<MongoSettings>>().Value
-);
+//builder.Services.AddSingleton<IMongoSettings>(serviceProvider =>
+//serviceProvider.GetRequiredService<IOptions<MongoSettings>>().Value
+//);
 //builder.Services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
 
 // configure DI for application services
@@ -46,11 +46,11 @@ builder.Services.AddScoped<IUserService, UserService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 // global cors policy
 app.UseCors(x => x
