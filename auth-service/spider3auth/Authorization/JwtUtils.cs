@@ -27,7 +27,7 @@ namespace spider3auth.Authorization
 
         public string GenerateJwtToken(User user)
         {
-            // generate token that is valid for minutes defined in AppSettings
+            //generate token that is valid for minutes defined in AppSettings
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes("0799F1F7E0678EAC63E60DBB3AE85963AE8CDC155686B51D950EAD4B9FA5A6FB");
             var tokenDescriptor = new SecurityTokenDescriptor
