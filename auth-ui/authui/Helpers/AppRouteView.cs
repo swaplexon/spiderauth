@@ -24,6 +24,7 @@ namespace authui.Helpers
             }
             else
             {
+                //what is this?
                 base.Render(builder);
             }
         }
