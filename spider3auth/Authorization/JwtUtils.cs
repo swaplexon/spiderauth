@@ -19,23 +19,21 @@ namespace spider3auth.Authorization
     }
     public class JwtUtils : IJwtUtils
     {
-        //private readonly AppSettings _appSettings;
-        private IConfiguration _configuration;
-        public JwtUtils(IConfiguration configuration)
+        private readonly AppSettings _appSettings;
+        public JwtUtils(IOptions<AppSettings> appSettings)
         {
-            _configuration = configuration;
-            //_appSettings = appSettings.Value;
+            _appSettings = appSettings.Value;
         }
 
         public string GenerateJwtToken(User user)
         {
             // generate token that is valid for minutes defined in AppSettings
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_configuration.GetValue<string>("AppSettings:Secret"));
+            var key = Encoding.ASCII.GetBytes("0799F1F7E0678EAC63E60DBB3AE85963AE8CDC155686B51D950EAD4B9FA5A6FB");
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),
-                Expires = DateTime.Now.AddMinutes(_configuration.GetValue<double>("AppSettings:JwtTokenTTL")),
+                Expires = DateTime.Now.AddMinutes(20),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
@@ -51,7 +49,7 @@ namespace spider3auth.Authorization
             var refreshToken = new RefreshToken
             {
                 Token = Convert.ToBase64String(randomBytes),
-                Expires = DateTime.UtcNow.AddDays(_configuration.GetValue<double>("AppSettings:RefreshTokenTTL")),
+                Expires = DateTime.UtcNow.AddDays(_appSettings.RefreshTokenTTL),
                 Created = DateTime.UtcNow,
                 CreatedByIp = ipAddress
             };
@@ -67,7 +65,7 @@ namespace spider3auth.Authorization
                 return null;
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_configuration.GetValue<string>("AppSettings:Secret"));
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
             try
             {
                 tokenHandler.ValidateToken(token, new TokenValidationParameters
