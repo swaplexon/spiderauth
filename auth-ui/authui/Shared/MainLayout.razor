@@ -1,0 +1,58 @@
+﻿@inherits LayoutComponentBase
+@inject IAccountService AccountService
+@inject NavigationManager NavigationManager
+
+@if (LoggedIn)
+{
+    <!-- nav -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark pe-5">
+        <a class="navbar-brand" href="https://www.lexonuk.com/">
+            <img src="/images/spider-logo.png" alt="..." height="36">
+        </a>
+        
+        <div class="navbar-nav">
+            <NavLink href="" Match="NavLinkMatch.All" class="nav-item nav-link">Home</NavLink>            
+        </div>
+        <!-- Settings all -->
+        <div class="ms-auto navbar-nav">
+            <div id="navbarNavDarkDropdown">                  
+                        <a class="nav-link " href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Settings
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a id="option1" class="dropdown-item" href="#">Change My Password</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Product Database</a></li>
+                            <li><a class="dropdown-item" href="#">Vendor Roster</a></li>
+                            <li><a class="dropdown-item" href="#">Global Exclusivity</a></li>
+                            <li><a class="dropdown-item" href="#">Top 100 Suggested Products</a></li>
+                            <li><a class="dropdown-item" href="#">PriceMatrix Config</a></li>
+                            <li><a class="dropdown-item" href="#">Unknown Products</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Price Config</a></li>
+                            <li><a class="dropdown-item" href="#">Price Update</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Substitute/Exceptions Duplicator</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Users</a></li>
+                        </ul>  
+                
+            </div>
+        </div>
+        <div class="navbar-nav">
+            <NavLink href="account/logout" class="nav-item nav-link">Logout</NavLink>
+        </div>
+    </nav>
+}
+
+<div class="app-container @(LoggedIn ? "bg-light" : "")">
+    <Alert />
+    @Body
+</div>
+
+@code {
+    public bool LoggedIn
+    {
+        get { return AccountService.User != null; }
+    }
+}
