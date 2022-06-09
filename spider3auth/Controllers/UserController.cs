@@ -5,7 +5,7 @@ using spider3auth.Services;
 
 namespace spider3auth.Controllers
 {
-    [Authorize] 
+    //[Authorize] 
     [ApiController]
     [Route("[controller]")]
     public class UserController : ControllerBase

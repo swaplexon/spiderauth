@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http.Json;
+using Microsoft.AspNetCore.Server.IIS;
 using Microsoft.Extensions.Options;
 using spider3auth.Authorization;
 using spider3auth.Helpers;
@@ -20,6 +22,9 @@ builder.Services.Configure<IISServerOptions>(options =>
 {
     options.AutomaticAuthentication = false;
 });
+
+//builder.Services.AddTransient<IClaimsTransformation, MyClaimsTransformation>();
+//builder.Services.AddAuthentication(IISServerDefaults.AuthenticationScheme);
 
 // Configure JSON options
 builder.Services.Configure<JsonOptions>(options =>
