@@ -33,6 +33,6 @@ jobs:
       - name: Deploy to IIS
         run: |
           iisreset /stop
-          Copy-Item D:\actions-runner\_work\authui\authui\auth-ui\authui\bin\Release\net6.0\publish D:\spider-ui -Recurse -Force
+          Copy-Item D:\actions-runner\_work\spiderauth\spiderauth\auth-ui\authui\bin\Release\net6.0\publish D:\spider-ui -Recurse -Force
           iisreset /start
         ##############
