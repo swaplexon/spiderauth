@@ -1056,11 +1056,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\swapn\\source\\repos\\spider3auth\\spider3auth\\spider3auth.csproj",
+      "projectUniqueName": "C:\\Users\\swapn\\source\\repos\\spider3auth\\auth-service\\spider3auth\\spider3auth.csproj",
       "projectName": "spider3auth",
-      "projectPath": "C:\\Users\\swapn\\source\\repos\\spider3auth\\spider3auth\\spider3auth.csproj",
+      "projectPath": "C:\\Users\\swapn\\source\\repos\\spider3auth\\auth-service\\spider3auth\\spider3auth.csproj",
       "packagesPath": "C:\\Users\\swapn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\swapn\\source\\repos\\spider3auth\\spider3auth\\obj\\",
+      "outputPath": "C:\\Users\\swapn\\source\\repos\\spider3auth\\auth-service\\spider3auth\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

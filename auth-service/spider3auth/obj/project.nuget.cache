@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u/6MecKGm3lup2oc5NtuCkxyQY56euIu72BXhiRSoa3tRFRUpLGqZUbvN9KsUkgUjIGehy4YshIEKdKZn9oI8Q==",
+  "dgSpecHash": "TbmQRICxiKN8d2Pu4XVDcwRrm2ygB7Lr5l0g70omV5fjX07pK3/HNZlMW7eZdprp3vDvxKvAYu0xn+EqO6gwXw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\swapn\\source\\repos\\spider3auth\\spider3auth\\spider3auth.csproj",
+  "projectFilePath": "C:\\Users\\swapn\\source\\repos\\spider3auth\\auth-service\\spider3auth\\spider3auth.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\swapn\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\swapn\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
