@@ -17,7 +17,7 @@ namespace spider3auth.Repository
         public MongoRepository(IMongoSettings settings)
         {
             _settings = settings;
-            var database = new MongoClient("mongodb://EC2AMAZ-5O46BJI:27017").GetDatabase("spider2");
+            var database = new MongoClient("mongodb://localhost:27017").GetDatabase("spider2");
             _collection = database.GetCollection<TDocument>(GetCollectionName(typeof(TDocument)));
         }
 
