@@ -58,9 +58,11 @@ namespace spider3auth.Services
 
            
 
-            var user = _userRepository.FindOneAsync(x => string.Equals(x.Username, model.Username, StringComparison.OrdinalIgnoreCase) && x.Password == model.Password).Result;
+            var user = _userRepository.FindOneAsync(x => x.Username.ToUpper() == model.Username.ToUpper()).Result;
             if (user == null)
                 throw new AppException("Username is incorrect !!");
+            if(user.Password != model.Password)
+                throw new AppException("Password is incorrect !!");
             var jwtToken = _jwtUtils.GenerateJwtToken(user);
             var refreshToken = _jwtUtils.GenerateRefreshToken(ipAddress);
             if(user.RefreshTokens != null)
